@@ -27,7 +27,7 @@ RUN \
 	python3 && \
  echo "**** install pip packages ****" && \
  pip3 install --no-cache-dir -U \
- 	APScheduler==3.6.3
+ 	APScheduler==3.6.3 \
 	arrow==0.15.6 \
 	beautifulsoup4==4.9.0 \
 	bleach==3.1.5 \
