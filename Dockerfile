@@ -82,7 +82,6 @@ RUN \
 	pytz==2020.1 \
 	requests==2.23.0 \
 	requests-oauthlib==1.3.0 \
-	six==1.14.0 \
 	soupsieve==2.0 \
 	tempora==1.14.1 \
 	tzlocal==2.0.0 \
