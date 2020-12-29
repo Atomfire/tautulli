@@ -30,6 +30,7 @@ RUN \
  	pytz \
 	tzlocal \
 	cherrypy \
+	apscheduler \
 	mock \
 	plexapi \
 	pycryptodomex && \
