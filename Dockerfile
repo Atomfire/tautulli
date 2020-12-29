@@ -40,7 +40,7 @@ RUN \
 	click \
 	cloudinary \
 	configobj \
-	cryptography \
+	cryptography==2.9.2 \
 	distro \
 	dnspython \
 	facebook-sdk \
