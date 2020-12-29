@@ -92,6 +92,7 @@ RUN \
 	xmltodict==0.12.0 \
 	zc.lockfile==2.0 \
 	zipp==1.2.0 \
+	wheel \
 	plexapi \
 	pycryptodomex && \
  echo "**** install app ****" && \
