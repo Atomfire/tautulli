@@ -29,6 +29,7 @@ RUN \
  pip3 install --no-cache-dir -U \
  	pytz \
 	tzlocal \
+	cherrypy \
 	mock \
 	plexapi \
 	pycryptodomex && \
