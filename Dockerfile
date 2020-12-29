@@ -27,6 +27,7 @@ RUN \
 	python3 && \
  echo "**** install pip packages ****" && \
  pip3 install --no-cache-dir -U \
+ 	pytz \
 	mock \
 	plexapi \
 	pycryptodomex && \
