@@ -32,7 +32,6 @@ RUN \
 	beautifulsoup4==4.9.0 \
 	bleach==3.1.5 \
 	bs4==0.0.1 \
-	certifi==2020.4.5.1 \
 	cffi==1.14.0 \
 	chardet==3.0.4 \
 	cheroot==8.3.0 \
