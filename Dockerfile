@@ -39,8 +39,6 @@ RUN \
     musl-dev && \
  echo "**** install pip packages ****" && \
  pip3 install --no-cache-dir -U \
-    pytz \
-    tzlocal \
 	mock \
 	plexapi \
 	pycryptodomex && \
@@ -65,6 +63,20 @@ RUN \
  rm -rf \
 	/root/.cache \
 	/tmp/*
+
+RUN \
+ addgroup tautulli && \
+ adduser --system --no-create-home tautulli --ingroup tautulli && \
+ chown tautulli:tautulli -R /app/tautulli && \
+ python3 -m venv /app/tautulli && \
+ source /app/tautulli/bin/activate && \
+ python3 -m pip install --upgrade pip setuptools pip-tools
+RUN \
+  echo "**** update pip ****" && \
+  pip -q install --upgrade pip idna==2.8
+RUN sed 's/==/>=/g' /app/tautulli/requirements.txt > /tmp/TMP_FILE && \
+    mv /tmp/TMP_FILE /app/tautulli/requirements-docker.txt
+RUN python3 -m pip -q install --no-cache-dir -r /app/tautulli/requirements-docker.txt
 
 # add local files
 COPY root/ /
