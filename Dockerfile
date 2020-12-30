@@ -12,6 +12,7 @@ ENV TZ=UTC
 WORKDIR /app
 
 RUN \
+  pip install --no-cache-dir --upgrade certifi && \
   groupadd -g 1000 tautulli && \
   useradd -u 1000 -g 1000 tautulli
 
