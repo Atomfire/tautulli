@@ -12,7 +12,7 @@ ENV TZ=UTC
 WORKDIR /app
 
 RUN \
-  apk --no-cache --update add jq && \
+  pip install --no-cache-dir --upgrade jq && \
   groupadd -g 1000 tautulli && \
   useradd -u 1000 -g 1000 tautulli
 
