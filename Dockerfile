@@ -40,6 +40,7 @@ RUN \
  echo "**** install pip packages ****" && \
  pip3 install --no-cache-dir -U \
     pytz \
+    tzlocal \
 	mock \
 	plexapi \
 	pycryptodomex && \
