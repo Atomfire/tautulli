@@ -13,7 +13,7 @@ WORKDIR /app
 
 RUN \
   apt-get install -q -y --no-install-recommends \
-    tar \
+    tar && \
   groupadd -g 1000 tautulli && \
   useradd -u 1000 -g 1000 tautulli && \
   echo "**** install app ****" && \
