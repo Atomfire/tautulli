@@ -9,7 +9,7 @@ ARG TAUTULLI_RELEASE
 ENV TAUTULLI_DOCKER=True
 ENV TZ=UTC
 
-WORKDIR /app
+WORKDIR /app/tautulli
 
 RUN \
   groupadd -g 1000 tautulli && \
