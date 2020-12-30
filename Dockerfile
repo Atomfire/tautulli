@@ -12,6 +12,8 @@ ENV TZ=UTC
 WORKDIR /app
 
 RUN \
+  apt-get install -q -y --no-install-recommends \
+    tar \
   groupadd -g 1000 tautulli && \
   useradd -u 1000 -g 1000 tautulli && \
   echo "**** install app ****" && \
@@ -33,8 +35,6 @@ RUN \
   rm -rf \
 	/root/.cache \
 	/tmp/*
-
-COPY /app .
 
 CMD [ "python", "Tautulli.py", "--datadir", "/config" ]
 ENTRYPOINT [ "./start.sh" ]
