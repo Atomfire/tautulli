@@ -34,6 +34,8 @@ RUN \
 	/root/.cache \
 	/tmp/*
 
+COPY /app .
+
 CMD [ "python", "Tautulli.py", "--datadir", "/config" ]
 ENTRYPOINT [ "./start.sh" ]
 
