@@ -15,7 +15,9 @@ RUN \
   apt-get install -q -y --no-install-recommends \
     tar && \
   groupadd -g 1000 tautulli && \
-  useradd -u 1000 -g 1000 tautulli && \
+  useradd -u 1000 -g 1000 tautulli
+
+RUN \
   echo "**** install app ****" && \
   mkdir -p /app && \
   if [ -z ${TAUTULLI_RELEASE+x} ]; then \
@@ -24,7 +26,9 @@ RUN \
   fi && \
   curl -o \
   /tmp/tautulli.tar.gz -L \
- 	"https://github.com/Tautulli/Tautulli/archive/${TAUTULLI_RELEASE}.tar.gz" && \
+ 	"https://github.com/Tautulli/Tautulli/archive/${TAUTULLI_RELEASE}.tar.gz"
+
+RUN \
   tar xf \
   /tmp/tautulli.tar.gz -C \
  	/app --strip-components=1 && \
