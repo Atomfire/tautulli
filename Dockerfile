@@ -12,8 +12,7 @@ ENV TZ=UTC
 WORKDIR /app
 
 RUN \
-  apt-get install -q -y -t wheezy-backports --no-install-recommends \
-    jq && \
+  apk --no-cache --update add jq && \
   groupadd -g 1000 tautulli && \
   useradd -u 1000 -g 1000 tautulli
 
