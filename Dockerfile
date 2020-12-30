@@ -4,7 +4,7 @@ LABEL maintainer="Tautulli"
 
 ARG BRANCH
 ARG COMMIT
-ARG TAUTULLI_RELEASE
+ARG TAUTULLI_RELEASE=v2.6.4
 
 ENV TAUTULLI_DOCKER=True
 ENV TZ=UTC
@@ -12,20 +12,19 @@ ENV TZ=UTC
 WORKDIR /app
 
 RUN \
-  pip install --no-cache-dir --upgrade jq && \
   groupadd -g 1000 tautulli && \
   useradd -u 1000 -g 1000 tautulli
 
 RUN \
   echo "**** install app ****" && \
   mkdir -p /app && \
-  if [ -z ${TAUTULLI_RELEASE+x} ]; then \
- 	TAUTULLI_RELEASE=$(curl -sX GET "https://api.github.com/repos/Tautulli/Tautulli/releases/latest" \
- 	| jq -r '. | .tag_name'); \
-  fi && \
+#  if [ -z ${TAUTULLI_RELEASE+x} ]; then \
+# 	TAUTULLI_RELEASE=$(curl -sX GET "https://api.github.com/repos/zSeriesGuy/Tautulli/releases/latest" \
+# 	| jq -r '. | .tag_name'); \
+#  fi && \
   curl -o \
   /tmp/tautulli.tar.gz -L \
- 	"https://github.com/Tautulli/Tautulli/archive/${TAUTULLI_RELEASE}.tar.gz"
+ 	"https://github.com/zSeriesGuy/Tautulli/archive/${TAUTULLI_RELEASE}.tar.gz"
 
 RUN \
   tar xf \
